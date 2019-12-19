@@ -5,9 +5,32 @@ ENV_DIR="$3"
 
 echo "      Before heroku pre buildpack debug"
 
+echo "      ---Current Dir---"
 pwd
 find .  -maxdepth 2 -type d
 ls -la
+
+echo "      ---BUILD_DIR Dir---"
+find $BUILD_DIR  -maxdepth 2 -type d
+ls $BUILD_DIR -la
+
+echo "      ---CACHE_DIR Dir---"
+find $CACHE_DIR  -maxdepth 2 -type d
+ls $CACHE_DIR -la
+
+echo "      ---ENV_DIR Dir---"
+find $ENV_DIR  -maxdepth 2 -type d
+ls $ENV_DIR -la
+
+
+echo "      ---/app/ Dir---"
+find /app/  -maxdepth 2 -type d
+ls /app/ -la
+
+
+echo "      ---/ Dir---"
+find / -maxdepth 1 -type d
+ls / -la
 
 
 # if [ -d "$CACHE_DIR" ]; then
