@@ -3,62 +3,41 @@ BUILD_DIR="$1"
 CACHE_DIR="$2"
 ENV_DIR="$3"
 
-echo "      Before heroku pre buildpack debug"
+echo "      ### Before heroku pre buildpack debug ###"
 
+echo " "
 echo "      !!!!! Killin' the cache !!!!!"
 rm -rf ${CACHE_DIR}/.* ${CACHE_DIR}/*
 
-echo "      ---Current Dir---"
+echo " "
+echo "      ~~~Current Dir~~~"
 pwd
 find .  -maxdepth 2 -type d
 ls -la
 
-echo "      ---BUILD_DIR Dir---"
+echo " "
+echo "      ~~~BUILD_DIR Dir~~~"
 find $BUILD_DIR  -maxdepth 2 -type d
 ls $BUILD_DIR -la
 
-echo "      ---CACHE_DIR Dir---"
+echo " "
+echo "      ~~~CACHE_DIR Dir~~~"
 find $CACHE_DIR  -maxdepth 2 -type d
 ls $CACHE_DIR -la
 
-echo "      ---ENV_DIR Dir---"
+echo " "
+echo "      ~~~ENV_DIR Dir~~~"
 find $ENV_DIR  -maxdepth 2 -type d
 ls $ENV_DIR -la
 
-
-echo "      ---/app/ Dir---"
+echo " "
+echo "      ~~~/app/ Dir~~~"
 find /app/  -maxdepth 2 -type d
 ls /app/ -la
 
-
-echo "      ---/ Dir---"
+echo " "
+echo "      ~~~/ Dir~~~"
 find / -maxdepth 1 -type d
 ls / -la
 
-
-# if [ -d "$CACHE_DIR" ]; then
-#         echo "Listing CACHE_DIR: ${CACHE_DIR}"
-#         ls -lR $CACHE_DIR
-
-#         echo "Killing CACHE_DIR: ${CACHE_DIR}"
-#         rm -rf $CACHE_DIR/*
-# fi
-
-# if [ -d "$BUILD_DIR" ]; then
-#         echo "Listing BUILD_DIR: ${BUILD_DIR}"
-#         ls -lR $BUILD_DIR
-
-#         # echo "Killing BUILD_DIR: ${BUILD_DIR}"
-#         # rm -rf $BUILD_DIR/*
-# fi
-
-# if [ -d "$ENV_DIR" ]; then
-#         echo "Listing ENV_DIR: ${ENV_DIR}"
-#         ls -lR $ENV_DIR
-
-#         # echo "Killing ENV_DIR: ${ENV_DIR}"
-#         # rm -rf $ENV_DIR/*
-# fi
-
 echo "      After heroku pre buildpack debug"
-
