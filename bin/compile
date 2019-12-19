@@ -5,6 +5,9 @@ ENV_DIR="$3"
 
 echo "      Before heroku pre buildpack debug"
 
+echo "      !!!!! Killin' the cache !!!!!"
+rm -rf ${CACHE_DIR}/.* ${CACHE_DIR}/*
+
 echo "      ---Current Dir---"
 pwd
 find .  -maxdepth 2 -type d
